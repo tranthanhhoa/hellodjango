@@ -1,9 +1,13 @@
+{% extends "polls/_layout.html" %}
+{% block main_content %}
+<h1 id="site-name">Listing of question</h1>
 {% if latest_question_list %}
-    <ul>
+    <ul class="">
     {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        <li class="item"><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+{% endblock %}

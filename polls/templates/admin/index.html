@@ -1,7 +1,22 @@
 {% extends "admin/base_site.html" %}
 {% load i18n admin_static %}
 
-{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />{% endblock %}
+{% block extrastyle %}
+    {{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />
+    <style>
+    #site-name a{
+        color: #fff !important;
+    }
+    .module{
+        background: #f5f5f5;
+        border: none;
+    }
+    .module h2, .module caption, .inline-group h2{
+        background: #0BF;
+        padding: 10px 5px;
+    }
+    </style>
+{% endblock %}
 
 {% block coltype %}colMS{% endblock %}
 
