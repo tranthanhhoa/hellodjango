@@ -2,9 +2,9 @@
 {% block main_content %}
 <h1 id="site-name">Listing of question</h1>
 {% if latest_question_list %}
-    <ul class="">
+    <ul class="ui list">
     {% for question in latest_question_list %}
-        <li class="item"><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        <li class="item">{{ question.pk }}<a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

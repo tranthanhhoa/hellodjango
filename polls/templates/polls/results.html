@@ -1,12 +1,13 @@
 {% extends "polls/_layout.html" %}
 {% block main_content %}
 <h1>{{ question.question_text }}</h1>
-
-<ul class="ui list">
-{% for choice in question.choice_set.all %}
+<div class="ui message">
+  <ul class="list">
+    {% for choice in question.choice_set.all %}
     <li class="item">{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
 {% endfor %}
-</ul>
+  </ul>
+</div>
 
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
 {% endblock %}
